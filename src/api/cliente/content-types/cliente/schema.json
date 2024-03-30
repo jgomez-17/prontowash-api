@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cliente",
     "pluralName": "clientes",
-    "displayName": "Cliente"
+    "displayName": "Cliente",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,17 @@
   "attributes": {
     "nombre": {
       "type": "string"
+    },
+    "celular": {
+      "type": "biginteger"
+    },
+    "correo": {
+      "type": "email"
+    },
+    "vehiculos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vehiculo.vehiculo"
     }
   }
 }
