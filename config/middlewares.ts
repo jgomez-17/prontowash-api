@@ -18,7 +18,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', 'https://tudominio.com'], // Agrega aquí los orígenes permitidos
+      origin: ['http://localhost:3000', 'https://prontowash-api.onrender.com/'], // Agrega aquí los orígenes permitidos
     },
   },
   'strapi::poweredBy',
