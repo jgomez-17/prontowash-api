@@ -15,15 +15,16 @@ export default [
       },
     },
   },
-  {
-    name: 'strapi::cors',
-    config: {
-      origin: ['http://localhost:3000'], // Agrega la URL de tu proyecto Next.js
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization'],
-      credentials: true,
-    },
-  },
+  'strapi::cors',
+  // {
+  //   name: 'strapi::cors',
+  //   config: {
+  //     origin: ['http://localhost:3000'], // Agrega la URL de tu proyecto Next.js
+  //     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  //     headers: ['Content-Type', 'Authorization'],
+  //     credentials: true,
+  //   },
+  // },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
