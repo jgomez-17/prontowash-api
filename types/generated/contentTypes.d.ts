@@ -800,7 +800,7 @@ export interface ApiClienteCliente extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.Text;
+    nombre: Attribute.Text;
     celular: Attribute.BigInteger;
     correo: Attribute.Email;
     vehiculos: Attribute.Relation<
@@ -890,7 +890,7 @@ export interface ApiServicioServicio extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    nombre: Attribute.Text;
+    name: Attribute.Text;
     descripcion: Attribute.Text;
     costo: Attribute.Decimal;
     createdAt: Attribute.DateTime;
