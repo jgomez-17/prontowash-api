@@ -4,7 +4,8 @@
   "info": {
     "singularName": "servicio",
     "pluralName": "servicios",
-    "displayName": "servicio"
+    "displayName": "servicio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "nombre": {
-      "type": "string"
+      "type": "text"
     },
     "descripcion": {
       "type": "text"

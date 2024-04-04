@@ -808,6 +808,11 @@ export interface ApiClienteCliente extends Schema.CollectionType {
       'oneToMany',
       'api::vehiculo.vehiculo'
     >;
+    orden: Attribute.Relation<
+      'api::cliente.cliente',
+      'oneToOne',
+      'api::orden.orden'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -826,18 +831,66 @@ export interface ApiClienteCliente extends Schema.CollectionType {
   };
 }
 
+export interface ApiOrdenOrden extends Schema.CollectionType {
+  collectionName: 'ordens';
+  info: {
+    singularName: 'orden';
+    pluralName: 'ordens';
+    displayName: 'orden';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cliente: Attribute.Relation<
+      'api::orden.orden',
+      'oneToOne',
+      'api::cliente.cliente'
+    >;
+    servicios: Attribute.Relation<
+      'api::orden.orden',
+      'oneToMany',
+      'api::servicio.servicio'
+    >;
+    vehiculo: Attribute.Relation<
+      'api::orden.orden',
+      'oneToOne',
+      'api::vehiculo.vehiculo'
+    >;
+    total: Attribute.Float;
+    nroOrden: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::orden.orden',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::orden.orden',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServicioServicio extends Schema.CollectionType {
   collectionName: 'servicios';
   info: {
     singularName: 'servicio';
     pluralName: 'servicios';
     displayName: 'servicio';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    nombre: Attribute.String;
+    nombre: Attribute.Text;
     descripcion: Attribute.Text;
     costo: Attribute.Decimal;
     createdAt: Attribute.DateTime;
@@ -913,6 +966,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::cliente.cliente': ApiClienteCliente;
+      'api::orden.orden': ApiOrdenOrden;
       'api::servicio.servicio': ApiServicioServicio;
       'api::vehiculo.vehiculo': ApiVehiculoVehiculo;
     }

@@ -25,6 +25,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::vehiculo.vehiculo"
+    },
+    "orden": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::orden.orden",
+      "mappedBy": "cliente"
     }
   }
 }
