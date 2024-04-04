@@ -800,7 +800,7 @@ export interface ApiClienteCliente extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    nombre: Attribute.String;
+    name: Attribute.Text;
     celular: Attribute.BigInteger;
     correo: Attribute.Email;
     vehiculos: Attribute.Relation<

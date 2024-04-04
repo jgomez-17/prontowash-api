@@ -12,8 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nombre": {
-      "type": "string"
+    "name": {
+      "type": "text"
     },
     "celular": {
       "type": "biginteger"
